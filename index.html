@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #debcd8;
+            padding-top: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            text-align: center;
+        }
+        .sidebar div {
+            padding: 15px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .sidebar div:hover {
+            background: #c299ba;
+        }
+        .container {
+            margin-left: 270px;
+            width: 60%;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        img {
+            width: 150px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+        .content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+        }
+        li {
+            background: #debcd8;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        li:hover {
+            background: #c299ba;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div onclick="showContent('info')">Thông tin cá nhân</div>
+        <div onclick="showContent('exercises')">Danh sách bài tập</div>
+    </div>
+
+    <div class="container">
+        <h1>Tô Thị Thu Hiền</h1>
+
+        <div id="info" class="content active">
+            <img src="https://img.pikbest.com/origin/09/20/30/90EpIkbEsTQ8a.png!sw800" alt="Ảnh cá nhân">
+            <p><strong>Chức vụ:</strong> Sinh viên lớp CNTT D2024A</p>
+            <p><strong>Quê quán:</strong> Thái Bình</p>
+            <p><strong>Định hướng nghề nghiệp:</strong> Làm giảng viên IT</p>
+            <p><strong>Sở thích:</strong> Ngủ, ăn, shopping...</p>
+            <p><strong>Đồ uống yêu thích:</strong> Chocolate</p>
+        </div>
+
+        <div id="exercises" class="content">
+            <h2>Danh sách bài tập</h2>
+            <ul>
+                <li><a href="index b1.html">Bài tập buổi 1</a></li>
+                <li><a href="indexxx.html">Bài tập buổi 3</a></li>
+                <li><a href="indexxxx.html">Bài tập buổi 4</a></li>
+                <li><a href="indexxxxx.html">Bài tập buổi 5</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function showContent(section) {
+            document.querySelectorAll('.content').forEach(div => {
+                div.classList.remove('active');
+            });
+            document.getElementById(section).classList.add('active');
+        }
+    </script>
+</body>
+</html>
